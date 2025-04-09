@@ -18,55 +18,106 @@
         <li><a href="jobs.html">Jobs</a></li>
         <li><a href="apply.html">Job Application</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="https://support@riotgames.com">Email Us</a></li>
+        <li><a href="mailto:support@riotgames.com">Email Us</a></li>
       </ul>
     </nav>
   </header>
+
   <main>
     <section class="application-form">
       <h2>Apply for a Position</h2>
-      <form action="formtest.php" method="post" novalidate>
+      <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
         <div class="form-group">
-          <label for="fullname">Full Name:</label>
-          <input type="text" id="fullname" name="fullname" required>
+          <label for="jobref">Job Reference Number:</label>
+          <select id="jobref" name="jobref" required>
+            <option value="">Select job reference</option>
+            <option value="JOB001">JOB001</option>
+            <option value="JOB002">JOB002</option>
+            <option value="JOB003">JOB003</option>
+          </select>
         </div>
+
+        <div class="form-group">
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" name="fname" pattern="[A-Za-z]{1,20}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" name="lname" pattern="[A-Za-z]{1,20}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}" required>
+        </div>
+
+        <fieldset class="form-group">
+          <legend>Gender</legend>
+          <label><input type="radio" name="gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="address">Street Address:</label>
+          <input type="text" id="address" name="address" maxlength="40" required>
+        </div>
+
+        <div class="form-group">
+          <label for="suburb">Suburb/Town:</label>
+          <input type="text" id="suburb" name="suburb" maxlength="40" required>
+        </div>
+
+        <div class="form-group">
+          <label for="state">State:</label>
+          <select id="state" name="state" required>
+            <option value="">Select state</option>
+            <option value="VIC">VIC</option>
+            <option value="NSW">NSW</option>
+            <option value="QLD">QLD</option>
+            <option value="NT">NT</option>
+            <option value="WA">WA</option>
+            <option value="SA">SA</option>
+            <option value="TAS">TAS</option>
+            <option value="ACT">ACT</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="postcode">Postcode:</label>
+          <input type="text" id="postcode" name="postcode" pattern="\d{4}" required>
+        </div>
+
         <div class="form-group">
           <label for="email">Email Address:</label>
           <input type="email" id="email" name="email" required>
         </div>
+
         <div class="form-group">
           <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" required>
+          <input type="tel" id="phone" name="phone" pattern="[\d\s]{8,12}" required>
         </div>
+
+        <fieldset class="form-group">
+          <legend>Required Technical Skills:</legend>
+          <label><input type="checkbox" name="skills[]" value="Java"> Java</label>
+          <label><input type="checkbox" name="skills[]" value="Python"> Python</label>
+          <label><input type="checkbox" name="skills[]" value="JavaScript"> JavaScript</label>
+          <label><input type="checkbox" name="skills[]" value="HTML/CSS"> HTML/CSS</label>
+        </fieldset>
+
         <div class="form-group">
-          <label for="position">Position Applied For:</label>
-          <select id="position" name="position" required>
-            <option value="">Select a position</option>
-            <option value="game-developer">Game Developer</option>
-            <option value="ui-ux-designer">UI/UX Designer</option>
-            <option value="qa-tester">QA Tester</option>
-          </select>
+          <label for="otherskills">Other Skills:</label>
+          <textarea id="otherskills" name="otherskills" rows="4" cols="50"></textarea>
         </div>
-        <div class="form-group">
-          <label for="resume">Resume (URL):</label>
-          <input type="url" id="resume" name="resume" required>
-        </div>
-        <div class="form-group">
-          <label for="comment">Additional Comments:</label>
-          <textarea id="comment" name="comment"></textarea>
-        </div>
-        <div class="form-group">
-          <label>
-            <input type="checkbox" name="terms" required> I agree to the terms and conditions.
-          </label>
-        </div>
+
         <button type="submit">Apply</button>
       </form>
     </section>
   </main>
+
   <footer>
     <p>Check our <a href="https://shuhuangao.atlassian.net/jira/people/team/8a26df5c-31e6-4ba0-881b-64294f98bbee" target="_blank">Jira Project</a></p>
-    <!-- GitHub Live:https://github.com/Shuhuan-Gao/Riot-Game-project/ -->
   </footer>
 </body>
 </html>
